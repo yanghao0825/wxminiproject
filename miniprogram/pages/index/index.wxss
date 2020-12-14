@@ -1,0 +1,34 @@
+/**index.wxss**/
+
+page {
+  width: 100%;
+  height: 100%;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  background: #FBC539;
+}
+.title-box text{
+  font-size: 42rpx;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  display: block;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.edit-box{
+  width: 690rpx;
+  height: 380rpx;
+  background: #F7C6C9;
+  margin: 20rpx auto;
+  border-radius: 20rpx;
+}
+.edit-box textarea{
+  width: 100%;
+  height: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #F365A0;
+}
