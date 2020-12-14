@@ -9,7 +9,7 @@ page {
   height: 100%;
   background: #FBC539;
 }
-.title-box text{
+.top-box text{
   font-size: 42rpx;
   font-weight: 600;
   color: #fff;
@@ -18,11 +18,26 @@ page {
   text-align: center;
   margin-top: 20rpx;
 }
+.title-box{
+  width: 690rpx;
+  height: 58rpx;
+  background: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin: 160rpx auto 20rpx;
+  border-radius: 8rpx;
+}
+.title-box input{
+  width: 100%;
+  height: 100%;
+  color: #F365A0;
+  font-size: 28rpx;
+}
 .edit-box{
   width: 690rpx;
   height: 380rpx;
   background: #F7C6C9;
-  margin: 20rpx auto;
+  margin: 0rpx auto 100rpx;
   border-radius: 20rpx;
 }
 .edit-box textarea{

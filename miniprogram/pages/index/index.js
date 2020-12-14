@@ -1,12 +1,47 @@
 //index.js
 const app = getApp()
-
+const db = wx.cloud.database()
+const time = require('../utils/util')
 Page({
   data: {
     navHeight: app.globalData.navHeight,
     statusHeight: app.globalData.statusHeight,
+    title:'',
+    content: ''
   },
-
+  titleEdit(e){
+    this.setData({title: e.detail.value})
+  },
+  contentEdit(e){
+    this.setData({content: e.detail.value})
+  },
+  submit(){
+    let timestamp = new Date();
+    let createTime = time.formatTime(timestamp);
+    const db = wx.cloud.database()
+    db.collection('notelist').add({
+      data: {
+        title: this.data.value,
+        content: this.data.content,
+        createtime: createTime
+      },
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        
+        wx.showToast({
+          title: '新增记录成功',
+        })
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '新增记录失败'
+        })
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+    })
+  },
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({

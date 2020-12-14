@@ -1,11 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="title-box" style="height: {{navHeight}}rpx">
+  <view class="top-box" style="height: {{navHeight}}rpx">
     <view class="logo-box" style="padding-top:{{statusHeight}}rpx">
       <text>恋恋的笔记本</text>  
     </view>
   </view>
+  <view class="title-box"><input type="text" value="{{title}}" placeholder="主题~" bindinput="titleEdit"></input></view>
   <view class="edit-box">
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <textarea placeholder="发生的新鲜事or需要记下来的事情" bindinput="contentEdit"></textarea>
   </view>
+  <button type="primary" bindtap="submit">提交</button>
 </view>
